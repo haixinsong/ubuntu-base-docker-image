@@ -2,7 +2,7 @@ FROM nediiii/novnc-continaer
 
 LABEL maintainer "nediiii varndiiii@gmail.com"
 
-RUN wget https://gitlab.com/nediiii/file-store/blob/master/DDLC-1.1.1-pc.tar.gz && \
+RUN wget https://gitlab.com/nediiii/file-store/raw/master/DDLC-1.1.1-pc.tar.gz && \
     tar -zxvf DDLC-1.1.1-pc.tar.gz && rm DDLC-1.1.1-pc.tar.gz && \
     mv DDLC-1.1.1-pc /app/
     # EXPOSE 8080 8088
