@@ -1,7 +1,5 @@
 FROM ubuntu:18.04 as builder
 
-LABEL maintainer "nediiii varndiiii@gmail.com"
-
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
     sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 
@@ -19,7 +17,13 @@ FROM ubuntu:18.04
 LABEL maintainer="nediiii <varnediiii@gmail.com>"
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
-    sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+    sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list \
+    && \
+    apt-get update && \
+    apt-get install --no-install-recommends --no-install-suggests -y ca-certificates && \
+    rm -rf /var/lib/apt/lists/* \
+    && \
+    sed -i 's/http/https/g' /etc/apt/sources.list
 
 # copy timezone file to set time and timezone
 COPY --from=builder /etc/localtime /etc/timezone /etc/
