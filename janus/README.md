@@ -46,27 +46,27 @@ If you want to test the janus, you can try `janus-gstreamer`.Or, do the followin
 3. start janus server
 
     ```bash
-    cd /opt/janus/bin
+    cd /opt/janus/bin && \
     ./janus &
     ```
 
 4. start python webserver at port 8000
 
     ```bash
-    cd /opt/janus/share/janus/demos/
+    cd /opt/janus/share/janus/demos/ && \
     python -m SimpleHTTPServer 8000 &
     ```
 
 5. start gstreamer to get the testsrc for audio and video
 
     ```bash
-    cd /opt/janus/share/janus/streams
-    chmod +x test_gstreamer_1.sh
+    cd /opt/janus/share/janus/streams && \
+    chmod +x test_gstreamer_1.sh && \
     ./test_gstreamer_1.sh &
     ```
 
 6. than , you can visit janus-demo in your browser , which typicaly [localhost:8000](localhost:8000)
-    the Demo `Echo Test` and `Streaming` work fine , the other I did not test.
+    the Demo `Echo Test` and `Streaming` work fine (!!important: make sure you have disabled chrome flags `enable-webrtc-hide-local-ips-with-mdns` [chrome://flags/#enable-webrtc-hide-local-ips-with-mdns](chrome://flags/#enable-webrtc-hide-local-ips-with-mdns)) , the other I did not test.
 
 ## How to dev
 

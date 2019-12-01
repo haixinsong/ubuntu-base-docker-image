@@ -44,7 +44,7 @@ If you want to test the janus demo, do the following.
     ```
 
 5. than , you can visit janus-demo in your browser , which typicaly [localhost:8000](localhost:8000)
-    the Demo `Echo Test` and `Streaming` work fine , the other I did not test.
+    the Demo `Echo Test` and `Streaming` work fine (!!important: make sure you have disabled chrome flags `enable-webrtc-hide-local-ips-with-mdns` [chrome://flags/#enable-webrtc-hide-local-ips-with-mdns](chrome://flags/#enable-webrtc-hide-local-ips-with-mdns)) , the other I did not test.
 
 ## How to dev
 

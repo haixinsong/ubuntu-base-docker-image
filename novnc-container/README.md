@@ -21,7 +21,8 @@ By default, it run a `xterm` app.
 
 Run it.
 `docker run --rm -d -p 8000:8000 -p 8088:8088 nediiii/novnc-continaer`
-Visit [localhost:8000](localhost:8000) (or the ip of it) in your browser , which typicaly 
+Visit [localhost:8000](localhost:8000) (or the ip of it) in your browser
+if you want audio enable ,  make sure you have disabled chrome flags `enable-webrtc-hide-local-ips-with-mdns` [chrome://flags/#enable-webrtc-hide-local-ips-with-mdns](chrome://flags/#enable-webrtc-hide-local-ips-with-mdns)
 
 ## How to dev
 
